@@ -1,9 +1,11 @@
-from textnode import TextNode, TextType
+from copy_static import copy_directory 
+from generate_page import generate_pages_recursive
 
 
 def main():
-    node = TextNode("this is example", TextType.LINK, "www.eatme.ass")
-    print(node)
+    copy_directory("static", "public")
+    generate_pages_recursive("content", "template.html", "public")
 
 
-main()
+if __name__ == "__main__":
+    main()
